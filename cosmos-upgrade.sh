@@ -1,5 +1,5 @@
 #!/bin/bash
-echo " Script by itrocket.net"
+source <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/common.sh)
 
 while getopts u:b:v:n:o:p:h:i:r: flag; do
   case "${flag}" in
@@ -15,6 +15,8 @@ while getopts u:b:v:n:o:p:h:i:r: flag; do
   *) echo "WARN: unknown parameter: ${OPTARG}"
   esac
 done
+
+printLogo
 
 # Function to send messages to Telegram
 # If you want to receive Telegram notifications after updates, create a /root/tg.conf file with the following values:
